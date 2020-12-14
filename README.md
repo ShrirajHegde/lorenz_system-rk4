@@ -1,6 +1,6 @@
 # **Lorenz system with Runge-Kutta (4) Method**
 
-Numerically Solving and Visualising Lorenz system by Runge - Kutta Method (4th order) on FORTRAN with **gnuplot** and generate GIF animation
+Numerically Solving and Visualising [Lorenz system](https://en.wikipedia.org/wiki/Lorenz_system) by Runge - Kutta Method (4th order) on FORTRAN with **gnuplot** and generate GIF animation
 
 
 
