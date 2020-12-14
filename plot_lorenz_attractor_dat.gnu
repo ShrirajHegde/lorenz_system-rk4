@@ -8,7 +8,7 @@ speed=10      #animation speed (no of points to plot every loop)
 # set output 'lorenz_attractor.gif' 
 
 unset colorbox
-#unset border ;
+#unset border ; #uncomment to hide borders (axis lines)
  unset xtics ; unset ztics ; unset ytics
 set zrange [-10:50] ;set yrange [-30:30] ;set xrange [-30:30]
 set xlabel "x-axis" ; set ylabel "y-axis" ;set zlabel "z-axis"
