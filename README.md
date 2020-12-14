@@ -3,8 +3,6 @@
 Numerically Solving and Visualising Lorenz system by Runge - Kutta Method (4th order) on FORTRAN with **gnuplot** and generate GIF animation
 
 
-<br>
-<br>
 
 ***
 
@@ -12,8 +10,7 @@ Numerically Solving and Visualising Lorenz system by Runge - Kutta Method (4th o
 <br>
 
 ![Animation GIF](lorenz_attractor.gif)
-<br>
-<br>
+
 # Usage (Visualization):
 * Compile the fortran program with 
 ```gfortran lorenz_attractor.f90```
@@ -21,8 +18,6 @@ Numerically Solving and Visualising Lorenz system by Runge - Kutta Method (4th o
 * Now, the data file for plotting should be in the folder, run `gnuplot plot_lorenz_attractor_dat.gnu` to plot in Gnuplot
 * Use mouse to rotate and view from different angles
 
-<br>
-<br>
 
 # Generating Animated GIF:
 
