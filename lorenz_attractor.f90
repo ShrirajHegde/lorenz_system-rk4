@@ -18,7 +18,7 @@ program main
     y=-0.01                 
     z=9.0 
     !second point
-    x1=10.0001
+    x1=10.00001
     y1=-0.01                 
     z1=9.0
 
@@ -29,13 +29,13 @@ program main
         x=x+M
         y=y+K
         z=z+L
-        ! CALL KLM(x1,y1,z1,f,g,h,K,L,M)
-        ! x1=x1+M
-        ! y1=y1+K
-        ! z1=z1+L
+        CALL KLM(x1,y1,z1,f,g,h,K,L,M)
+        x1=x1+M
+        y1=y1+K
+        z1=z1+L
 
         t=t+h
-        write(20,*)x,y,z
+        write(20,*)x,y,z,x1,y1,z1
     enddo
     CLOSE(20)
 
