@@ -2,6 +2,7 @@ program main
     implicit none
     real*8::h,y,x,z,K,L,u_limit,M,t
     real*8::sigma,rho,beta
+    real*8::x1,y1,z1
 
     !================================
     !constants
@@ -15,14 +16,24 @@ program main
     ! initial conditions
     x=10.0
     y=-0.01                 
-    z=9.0  
+    z=9.0 
+    !second point
+    x1=10.0001
+    y1=-0.01                 
+    z1=9.0
+
 
     OPEN(20,file='lorenz_attractor.dat')
     do while(t<=u_limit)
-        CALL KLM(x,y,f,g,h,K,L,M)
+        CALL KLM(x,y,z,f,g,h,K,L,M)
         x=x+M
         y=y+K
         z=z+L
+        ! CALL KLM(x1,y1,z1,f,g,h,K,L,M)
+        ! x1=x1+M
+        ! y1=y1+K
+        ! z1=z1+L
+
         t=t+h
         write(20,*)x,y,z
     enddo
@@ -45,8 +56,8 @@ program main
     end function g
 
 
-    subroutine KLM(x,y,f,g,h,K,L,M) !subroutine for Runge Kutta (order 4)
-        real*8::x,f,g,y,k1,k2,k3,k4,h,K,L,l1,l2,l3,l4,M,m1,m2,m3,m4
+    subroutine KLM(x,y,z,f,g,h,K,L,M) !subroutine for Runge Kutta (order 4)
+        real*8::x,f,g,y,z,k1,k2,k3,k4,h,K,L,l1,l2,l3,l4,M,m1,m2,m3,m4
         m1=h*f2(x,y,z)
         k1=h*f(x,y,z)
         l1=h*g(x,y,z)
