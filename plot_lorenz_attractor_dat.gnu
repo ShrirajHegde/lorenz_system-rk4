@@ -1,11 +1,11 @@
 file='lorenz_attractor.dat'
 end_time=200 #end time set in fortran program
 step=0.003333 #h variable in FORTRAN program
-speed=40  #animation speed (no of points to plot every loop)
+speed=20 #animation speed (no of points to plot every loop)
 
 # ######### uncomment following lines to generate GIF animation ####################
-set terminal gif animate medium size 500,500
-set output 'lorenz_attractor.gif' 
+# set terminal gif animate medium size 500,500
+# set output 'lorenz_attractor.gif' 
 
 unset colorbox
 unset border ; #uncomment to hide borders (axis lines)
@@ -19,9 +19,9 @@ do for [iter=1:no_points:speed] {
     splot file every ::iter - 4000::iter using 1:2:3 w l ls 1 lc rgb 'green' notitle,file every ::iter-4000::iter using 4:5:6 w l ls 1 lc rgb 'red' notitle, \
           file every ::iter::iter using 1:2:3 w p ls 1 pt 7 ps 3 lc rgb "green" notitle,file every ::iter::iter using 4:5:6 w p ls 1 pt 7 ps 3 lc rgb "red" notitle
     # comment/uncomment to disable/enable autorotation
-    set view 45, angle, 2, 1
-    angle=angle+1*0.3
-    if(angle>360){angle=0}
+    # set view 45, angle, 2, 1
+    # angle=angle+1*0.3
+    # if(angle>360){angle=0}
 
 
     print "Point " ,iter," of ",floor(no_points)," (",100.0*iter/no_points," %)" 
