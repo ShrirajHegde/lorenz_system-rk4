@@ -5,6 +5,7 @@ speed=20 #animation speed (no of points to plot every loop)
 
 # ######### uncomment following lines to generate GIF animation ####################
 # set terminal gif animate medium size 500,500
+set terminal pngcairo
 # set output 'lorenz_attractor.gif' 
 
 unset colorbox
@@ -24,7 +25,7 @@ do for [iter=1:no_points:speed] {
     # if(angle>360){angle=0}
 
 
-    print "Point " ,iter," of ",floor(no_points)," (",100.0*iter/no_points," %)" 
+    # print "Point " ,iter," of ",floor(no_points)," (",100.0*iter/no_points," %)" 
     pause 0.01 #makes rotating axis responsive after high point count, if still non-responsive,resize window to smaller size
 }
 set output
